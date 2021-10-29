@@ -1,9 +1,11 @@
 import React from 'react';
 import './Package.css';
 import Button from '@restart/ui/esm/Button';
+import Rating from 'react-rating';
 
+import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faStar, faUser } from '@fortawesome/free-solid-svg-icons'
+import {faStar as fullStar } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 
 const Package = (props) => {
@@ -14,13 +16,12 @@ const Package = (props) => {
       <img src={img} className="card-img-top" alt="..."/>
       <div className="card-body text-center m-0">
         <h5 className="card-title">{name}</h5>
-        <span className='text-warning'>
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-        <small className='mx-2 text-dark'>{rating}</small>
-        </span>
+        <div className="text-start">
+           <Rating readonly
+            className='text-warning'
+            initialRating={rating}emptySymbol={<FontAwesomeIcon icon={emptyStar} />}fullSymbol={<FontAwesomeIcon icon={fullStar} />}/>{' '} <span className="text-muted">{rating}</span>
+            <span className="text-muted">( {ratingCount} reviews )</span>
+         </div>
         <p >Price: {price} $</p>
         <Link to={`/order/${_id}`}><Button className='btn btn-primary w-100'>View Details</Button></Link>
       </div>
@@ -34,3 +35,24 @@ export default Package;
 
 
 // const {_id,time, ratingCount, desc, img, name, price, rating,region} = props.service
+
+{/* <span className='text-warning'>
+        <FontAwesomeIcon icon={faStar} />
+        <FontAwesomeIcon icon={faStar} />
+        <FontAwesomeIcon icon={faStar} />
+        <FontAwesomeIcon icon={faStar} />
+        <small className='mx-2 text-dark'>{rating}</small>
+        </span> */}
+
+
+                {/* <div className="text-start">
+                            <Rating readonly
+                                style={{ color: '#f97150' }}
+                                initialRating={rating}
+                                emptySymbol={<FontAwesomeIcon icon={emptyStar} />}
+                                fullSymbol={<FontAwesomeIcon icon={fullStar} />}
+                            />{' '}
+                    <span className="text-muted">{rating}</span>
+                            <span className="text-muted">( {ratingCount} reviews )</span>
+
+                            </div> */}

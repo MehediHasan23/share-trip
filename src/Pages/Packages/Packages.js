@@ -12,7 +12,7 @@ const Packages = () => {
     .then(data => setPackages(data))
   },[])
   return (
-    <div>
+    <div className='mt-5'>
       <Container>
       
       <div> 

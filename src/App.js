@@ -14,6 +14,8 @@ import Login from './Pages/Login/Login/Login';
 import Contact from './Pages/Contact/Contact';
 import About from './Pages/About/About';
 import Order from './Pages/Order/Order';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import Error from './Pages/Error/Error';
 
 function App() {
   return (
@@ -34,11 +36,14 @@ function App() {
           <Route exact path='/about'>
             <About></About>
           </Route>
-          <Route exact path='/order/:id'>
+          <PrivateRoute exact path='/order/:id'>
             <Order></Order>
-          </Route>
+          </PrivateRoute>
           <Route exact path='/login'>
             <Login></Login>
+          </Route>
+          <Route exact path='*'>
+            <Error></Error>
           </Route>
         </Switch>
         <Footer></Footer>
