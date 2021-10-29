@@ -1,0 +1,7 @@
+.menu-container{
+  background-image: linear-gradient(to right, #525457 100%, #222529 100%) !important;
+  
+}
+.menu-container a{
+  color: rgb(255, 255, 255) !important;
+}
