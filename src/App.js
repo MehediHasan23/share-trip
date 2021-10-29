@@ -13,6 +13,7 @@ import Footer from './Shared/Footer/Footer';
 import Login from './Pages/Login/Login/Login';
 import Contact from './Pages/Contact/Contact';
 import About from './Pages/About/About';
+import Order from './Pages/Order/Order';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route exact path='/about'>
             <About></About>
+          </Route>
+          <Route exact path='/order/:id'>
+            <Order></Order>
           </Route>
           <Route exact path='/login'>
             <Login></Login>

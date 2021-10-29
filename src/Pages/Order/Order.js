@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Service = () => {
+const Order = () => {
   return (
     <div>
       
@@ -8,8 +8,4 @@ const Service = () => {
   );
 };
 
-export default Service;
-
-
-
-
+export default Order;
