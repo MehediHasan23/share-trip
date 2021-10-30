@@ -16,6 +16,7 @@ import About from './Pages/About/About';
 import Order from './Pages/Order/Order';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import Error from './Pages/Error/Error';
+import MyOrders from './Pages/MyOrders/MyOrders';
 
 function App() {
   return (
@@ -39,6 +40,9 @@ function App() {
           <PrivateRoute exact path='/order/:id'>
             <Order></Order>
           </PrivateRoute>
+          <Route exact path ='/myOrders'>
+            <MyOrders></MyOrders>
+          </Route>
           <Route exact path='/login'>
             <Login></Login>
           </Route>

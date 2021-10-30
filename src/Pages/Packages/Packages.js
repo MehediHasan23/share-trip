@@ -1,16 +1,33 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Spinner } from 'react-bootstrap';
+import useProvContext from '../../Hooks/useProvContext';
 import Package from '../Package/Package';
 
+
 const Packages = () => {
+
+//data loading 
   const [packages, setPackages] = useState([])
   useEffect(()=>{
     fetch('http://localhost:5000/packages')
     .then(res => res.json())
     .then(data => setPackages(data))
   },[])
+
+  const {firebase} = useProvContext()
+  const {loading} = firebase;
+      if(loading){
+              return (
+                <div className="text-center my-5 py-5">
+                <Spinner animation="border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              </div>
+              );
+            }
+
   return (
     <div className='mt-5'>
       <Container>

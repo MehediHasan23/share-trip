@@ -1,38 +1,124 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Container, Button } from 'react-bootstrap';
-import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+import Rating from 'react-rating';
 
+import { useParams } from 'react-router';
+import { useForm } from "react-hook-form";
+
+
+
+import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faStar as fullStar } from '@fortawesome/free-solid-svg-icons'
+import './Order.css';
+import useProvContext from '../../Hooks/useProvContext';
 const Order = () => {
+
+
   const{id} = useParams()
-  const [packages, setPackages] = useState([])
+  const [packages, setPackages] = useState({})
   useEffect(()=>{
     fetch('http://localhost:5000/packages')
     .then(res=> res.json())
-    .then(res=> setPackages(res))
-  },[])
+    .then(data=>{
+      const packages = data?.find(pack => pack?._id === id)
+      setPackages(packages)
+      reset(packages)
 
-  const matchingItem = packages?.find(pack => pack?._id === id)
+    })
 
+  },[id])
+
+ 
+
+  // react hook from 
+
+  const { register, handleSubmit , reset ,formState: { errors }} = useForm();
+  
+  const onSubmit = data => {
+    console.log(data)
+    fetch('http://localhost:5000/orders',{
+        method:'POST',
+        headers:{
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }).then(res=>res.json())
+    .then(result =>{
+        if(result.insertedId){
+            alert('order successfully taken')
+            reset()
+            
+        }
+    })
+};
+
+
+
+
+//user
+  const {firebase} = useProvContext()
+  const {user} = firebase;
+  const {email, displayName} = user;
+
+ 
   return (
-    <div>
-      <Container className ='d-flex flex-wrap justify-content-center align-items-sm-center details'>
-      <div>
-          <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={matchingItem?.img} />
-          <Card.Body className='text-center'>
-          <Card.Title>{matchingItem?.name}</Card.Title>
-          <p className='m-0'>Description: {matchingItem?.desc}</p>
-            <p className='m-0'>Price: {matchingItem?.price} $</p>
-            <p>Rating: {matchingItem?.rating}</p>
-            {/* <Card.Text>{matchingItem}</Card.Text> */}
-            <Link to='/home'><Button className='w-100' variant="primary">Gb Back</Button></Link>
-          </Card.Body>
-          </Card>
+    <div className='order-place'>
+     <h1 className='text-center my-5'>PLACE YOUR ORDER</h1>
+      <div className="row mx-auto">
+        <div className="col-sm-12 col-md-6 col-lg-8">
+        <div className="card mb-3" style={{maxWidth: '540px'}}>
+            <div className="row g-0">
+              <div className="col-md-4">
+                <img src={packages?.img}className="img-fluid rounded-start" alt="..."/>
+              </div>
+              <div className="col-md-8">
+                <div className="card-body">
+                  <h5 className="card-title">{packages?.name}</h5>
+                  <p className='m-0'>{packages?.region}</p>
+                  <small>{packages?.time}</small>
+                  <div className="text-start">
+                    <Rating readonly
+                      className='text-warning'
+                      initialRating={packages?.rating}emptySymbol={<FontAwesomeIcon icon={emptyStar} />}fullSymbol={<FontAwesomeIcon icon={fullStar} />}/>{' '} <span className="text-muted">{packages?.rating}</span>
+                      <span className="text-muted">( {packages?.ratingCount} reviews )</span>
+                  </div>
+                  <p className="card-text">About: {packages?.desc}</p>
+                  <h3>price: {packages?.price}</h3>
+                </div>
+              </div>
+            </div>
           </div>
-    </Container>
+
+
+        </div>
+
+
+
+
+      <div className="col-sm-12 col-md-6 col-lg-4">
+        <h1>Add a service</h1>
+        <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
+              <input defaultValue={packages?.name} {...register("package_name")} />     
+
+                <input defaultValue={displayName} {...register("Name")} />
+
+                <input defaultValue={email} {...register("email", { required: true })} />
+                {errors.email && <span className="error">This field is required</span>}
+                <input placeholder="Address" defaultValue="" {...register("address")} />
+                <input placeholder="City" defaultValue="" {...register("city")} />
+                <input placeholder="phone number" defaultValue="" {...register("phone")} />
+
+                <input type="submit" />
+            </form>
+        </div>
+      </div>
+
+
     </div>
   );
 };
 
 export default Order;
+
+
+

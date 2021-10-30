@@ -30,7 +30,7 @@ const Menubar = () => {
                 </>
               ) : (
               <>
-              <Nav.Link as={NavLink} to="/service" className="text-white fw-bold fs-6">YOUR SERVICE</Nav.Link>
+              <Nav.Link as={NavLink} to="/myOrders" className="text-white fw-bold fs-6">MY ORDERS</Nav.Link>
                 <NavDropdown
                   title={
                     <img
