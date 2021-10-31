@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.data-form form input , textarea{
+.data-form form input {
   width: 40%;
   margin-bottom: 10px;
 }

@@ -11,19 +11,22 @@ const Menubar = () => {
   const {user, logOut} = firebase;
   const { displayName, photoURL, email } = user;
   return (
-    <div>
-      <Navbar className='menu-container'  bg="dark" expand="lg">
+    <>
+      <Navbar className='menu-container'  bg="dark" sticky="top"  expand="lg">
   <Container>
-    <Navbar.Brand href="#home"><img src={navlogo} alt="" /></Navbar.Brand>
+    <Navbar.Brand as={NavLink} to="/home"><img src={navlogo} alt="" /></Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ms-auto align-items-center">
       <Nav.Link as={NavLink} to="/home" className="text-white fw-bold fs-6">HOME</Nav.Link>
       <Nav.Link as={NavLink} to="/contact" className="text-white fw-bold fs-6">CONTACT</Nav.Link>
-      
-      <Nav.Link as={NavLink} to="/About" className="text-white fw-bold fs-6">ABOUT</Nav.Link>
+
       {!email ? (
                 <>
+                  <Nav.Link className="text-white fw-bold fs-6" as={NavLink} to="/signup">
+                    SIGN UP
+                  </Nav.Link>
+
                 <Nav.Link className="text-white fw-bold fs-6" as={NavLink} to="/login">
                     SIGN IN
                   </Nav.Link>
@@ -61,7 +64,7 @@ const Menubar = () => {
     </Navbar.Collapse>
   </Container>
 </Navbar>
-    </div>
+    </>
   );
 };
 

@@ -1,15 +1,16 @@
 import React from 'react';
-import { useHistory, useLocation} from 'react-router-dom';
+import { NavLink, useHistory, useLocation} from 'react-router-dom';
 
 import useProvContext from './../../../Hooks/useProvContext'
 import './Login.css'
 import google from './../../../images/google.png'
+import github from './../../../images/github.png'
 
 import { Col, Form, FormControl, InputGroup, Row } from 'react-bootstrap';
 
 const Login = () => {
   const {firebase} = useProvContext()
-  const {signInWithGoogle,loginProcess, handelEmail, handelPass, user,error,setError, setUser} = firebase;
+  const {signInWithGoogle, signInWithGithub, loginProcess, handelEmail, handelPass, user,error,setError, setUser} = firebase;
   console.log(user);
 
   const history = useHistory();
@@ -18,8 +19,11 @@ const Login = () => {
   return (
   
     <div className="text-center my-4 login-section">
-     <h2>Please Login With</h2>
+     <h2>Please Login</h2>
       <p className="mt-2">
+        <NavLink className="text-decoration-none" to="/signup">
+          Don't have an account? Sign up!
+        </NavLink>
       </p>
       <p className="text-danger text-center">{error}</p>
       
@@ -101,8 +105,24 @@ const Login = () => {
         >
           <img src={google} width="46px" alt="google-icon" />
         </button>
+        <button
+          onClick={() => {
+            signInWithGithub()
+              .then((result) => {
+                setUser(result.user);
+                history.push(redirect);
+              })
+              .catch((err) => {
+                setError(err.message);
+              });
+          }}
+          className="btn"
+        >
+          <img width="55px" src={github} alt="github-icon" />
+        </button>
 
       </div>
+
     </div>
    
     );

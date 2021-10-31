@@ -12,13 +12,13 @@ import Home from './Pages/Home/Home';
 import Footer from './Shared/Footer/Footer';
 import Login from './Pages/Login/Login/Login';
 import Contact from './Pages/Contact/Contact';
-import About from './Pages/About/About';
 import Order from './Pages/Order/Order';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import Error from './Pages/Error/Error';
 import MyOrders from './Pages/MyOrders/MyOrders';
 import AddService from './Pages/AddService/AddService';
 import ManageOrders from './Pages/ManageOrders/ManageOrders';
+import SignUp from './Pages/Login/SignUp/SignUp';
 
 function App() {
   return (
@@ -35,10 +35,7 @@ function App() {
           </Route>
           <Route exact path='/contact'>
             <Contact></Contact>
-          </Route>
-          <Route exact path='/about'>
-            <About></About>
-          </Route>
+          </Route>          
           <PrivateRoute exact path='/order/:id'>
             <Order></Order>
           </PrivateRoute>
@@ -50,6 +47,9 @@ function App() {
           </Route>
           <Route exact path ='/addService'>
             <AddService></AddService>
+          </Route>
+          <Route exact path ='/signup'>
+            <SignUp></SignUp>
           </Route>
           <Route exact path='/login'>
             <Login></Login>
