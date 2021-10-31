@@ -23,7 +23,7 @@ const Package = (props) => {
             <span className="text-muted">( {ratingCount} reviews )</span>
          </div>
         <p >Price: {price}</p>
-        <Link to={`/order/${_id}`}><Button className='btn btn-primary w-100 fw-bold'>Booking Now</Button></Link>
+        <Link to={`/order/${_id}`}><Button className='btn btn-primary w-100 fw-bold'>Book Now</Button></Link>
       </div>
       </div>
     </div>
