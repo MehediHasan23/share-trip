@@ -41,32 +41,34 @@ const MyOrders = () => {
   
 
   return (
-    <div className="container-fluid admin-section p-2">
-      <div className='text-center fw-bold my-5'>
+    <div className="my-order-section p-5">
+      <div className='text-center fw-bold text-white'>
         <h1>REVIEW YOUR PACKAGES</h1>
          <h4>TOTAL ORDERS:  { lists.length}</h4>
       </div>
-    <Table responsive="sm" className='my-5'>
+      <div className='container '>
+        <Table striped bordered hover
+ responsive="sm" >
     <thead>
       <tr>
                     {Array.from({ length: 1 }).map((_, index) => (
-                                <th key={index}>BUYER</th>
+                                <th className='text-white' key={index}>BUYER</th>
                     ))}
             
                     {Array.from({ length: 1 }).map((_, index) => (
-                                <th key={index}> ORDER ID </th>
+                                <th className='text-white' key={index}> ORDER ID </th>
                     ))}
             
 
                     {Array.from({ length: 1 }).map((_, index) => (
-                      <th key={index}>PRICE</th>
+                      <th className='text-white' key={index}>PRICE</th>
                     ))}
             
                     {Array.from({ length: 1 }).map((_, index) => (
-                                <th key={index}>STATUS</th>
+                                <th className='text-white' key={index}>STATUS</th>
                     ))}
                     {Array.from({ length: 1 }).map((_, index) => (
-                                <th key={index}>CANCEL</th>
+                                <th className='text-white' key={index}>CANCEL</th>
                     ))}
           </tr>
           
@@ -77,19 +79,19 @@ const MyOrders = () => {
     <tr>
       
       {Array.from({ length: 1 }).map((_, index) => (
-        <td className='fw-bold' key={index}>{ list?.Name}</td>
+        <td className='fw-bold text-white' key={index}>{ list?.Name}</td>
       ))}
               
       {Array.from({ length: 1 }).map((_, index) => (
-        <td className='fw-bold' key={index}>{ list?._id}</td>
+        <td className='fw-bold text-white' key={index}>{ list?._id}</td>
       ))}
               
       {Array.from({ length: 1 }).map((_, index) => (
-        <td className='fw-bold' key={index}>{ list?.price}</td>
+        <td className='fw-bold text-white' key={index}>{ list?.price}</td>
       ))}
               
       {Array.from({ length: 1 }).map((_, index) => (
-        <td className='fw-bold' key={index}>{ list?.status}</td>
+        <td className='fw-bold text-white' key={index}>{ list?.status}</td>
       ))}
       {Array.from({ length: 1 }).map((_, index) => (
         <td  key={index}><button onClick={() => deleteId(list._id)} className="mx-3 text-danger"><FontAwesomeIcon icon={faTrash} /></button></td>
@@ -101,6 +103,7 @@ const MyOrders = () => {
 </tbody>))
         }
     </Table>
+    </div>
 
     </div>
   );

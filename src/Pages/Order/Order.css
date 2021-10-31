@@ -1,4 +1,7 @@
 .order-section{
-  background-color: lightskyblue;
-  
+ background-image: linear-gradient(rgba(80, 79, 79, 0.5), rgba(0, 0, 0, 0.5)), url(./../../images/landscape4.jpg);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 !important;
 }

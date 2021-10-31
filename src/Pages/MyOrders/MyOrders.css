@@ -1,6 +1,6 @@
-/* .myOrders{
-  margin-top: 100px !important;
-background-color: rgba(255, 99, 71, 0.616);
-  height: 100vh;
-  margin-bottom: 40px;
-} */
+.my-order-section{
+  background-image: linear-gradient(rgba(80, 79, 79, 0.5), rgba(0, 0, 0, 0.5)), url('./../../images/landscape4.jpg') !important;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

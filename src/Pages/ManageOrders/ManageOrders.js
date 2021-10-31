@@ -56,35 +56,37 @@ const ManageOrders = () => {
 
  
   return (
-    <div className="container-fluid admin-section">
-      <div className='text-center fw-bold'>
-        <h1 className='pt-5'>ADMIN DASHBOARD</h1>
-         <h4 className='pt-2 pb-5'>TOTAL ORDERS:  { allOrders.length}</h4>
+    <div className="admin-section p-5">
+      <div className='text-center fw-bold text-white'>
+        <h1 className='pt-3'>ADMIN DASHBOARD</h1>
+         <h4 className='pt-2 pb-2'>TOTAL ORDERS:  { allOrders.length}</h4>
       </div>
-    <Table responsive="sm" className='my-5'>
+      <div className='container'>
+         <Table striped bordered hover
+ responsive="sm" className='my-3'>
     <thead>
       <tr>
                     {Array.from({ length: 1 }).map((_, index) => (
-                                <th key={index}>BUYER</th>
+                                <th className='text-white' key={index}>BUYER</th>
                     ))}
             
                     {Array.from({ length: 1 }).map((_, index) => (
-                                <th key={index}> ORDER ID </th>
+                                <th className='text-white' key={index}> ORDER ID </th>
                     ))}
             
 
                     {Array.from({ length: 1 }).map((_, index) => (
-                      <th key={index}>PRICE</th>
+                      <th className='text-white' key={index}>PRICE</th>
                     ))}
             
                     {Array.from({ length: 1 }).map((_, index) => (
-                                <th key={index}>STATUS</th>
+                                <th className='text-white' key={index}>STATUS</th>
                     ))}
                     {Array.from({ length: 1 }).map((_, index) => (
-                                <th key={index}>CANCEL</th>
+                                <th className='text-white' key={index}>CANCEL</th>
                     ))}
                     {Array.from({ length: 1 }).map((_, index) => (
-                                <th key={index}>CONFIRM</th>
+                                <th className='text-white' key={index}>CONFIRM</th>
                     ))}
           </tr>
           
@@ -95,19 +97,19 @@ const ManageOrders = () => {
     <tr>
       
       {Array.from({ length: 1 }).map((_, index) => (
-        <td className='fw-bold' key={index}>{ allOrder?.Name}</td>
+        <td className='fw-bold text-white' key={index}>{ allOrder?.Name}</td>
       ))}
               
       {Array.from({ length: 1 }).map((_, index) => (
-        <td className='fw-bold' key={index}>{ allOrder?._id}</td>
+        <td className='fw-bold text-white' key={index}>{ allOrder?._id}</td>
       ))}
               
       {Array.from({ length: 1 }).map((_, index) => (
-        <td className='fw-bold' key={index}>{ allOrder?.price}</td>
+        <td className='fw-bold text-white' key={index}>{ allOrder?.price}</td>
       ))}
               
       {Array.from({ length: 1 }).map((_, index) => (
-        <td className='fw-bold' key={index}>{ allOrder?.status}</td>
+        <td className='fw-bold text-white' key={index}>{ allOrder?.status}</td>
       ))}
       {Array.from({ length: 1 }).map((_, index) => (
         <td  key={index}><button onClick={() => deleteId(allOrder._id)} className="mx-3 text-danger"><FontAwesomeIcon icon={faTrash} /></button></td>
@@ -124,6 +126,7 @@ const ManageOrders = () => {
 </tbody>))
         }
     </Table>
+   </div>
 
     </div>
   );

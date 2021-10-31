@@ -66,20 +66,21 @@ const Order = () => {
   return (
     <div className='container-fluid order-section'>
       <div className='container py-5'>
-     <h1 className='text-center my-5'>PLACE YOUR ORDER</h1>
+     <h1 className='text-center mb-3 fw-bold text-white'>PLACE YOUR ORDER</h1>
       <div className="row mx-auto align-items-center">
         <div className="col-sm-12 col-md-6 col-lg-6">
         <div className="card mb-3" style={{maxWidth: '540px'}}>
             <div className="row g-0">
               <div className="col-md-4">
-                <img src={packages?.img}className="img-fluid rounded-start" alt="..."/>
+                <img src={packages?.img}className="img-fluid h-75 m-3 p-3 rounded-start" alt="..."/>
               </div>
               <div className="col-md-8">
-                <div className="card-body">
+                <div className="card-body text-center">
                   <h5 className="card-title">{packages?.name}</h5>
                   <p className='m-0'>{packages?.region}</p>
-                  <small>{packages?.time}</small>
-                  <div className="text-start">
+                  <small>Duration: {packages?.time}</small>
+                    <div className="text-center
+                  ">
                     <Rating readonly
                       className='text-warning'
                       initialRating={packages?.rating}emptySymbol={<FontAwesomeIcon icon={emptyStar} />}fullSymbol={<FontAwesomeIcon icon={fullStar} />}/>{' '} <span className="text-muted">{packages?.rating}</span>
