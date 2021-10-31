@@ -34,7 +34,7 @@ const Packages = () => {
       
       <div> 
         <h1 className='text-center fw-bold mb-5'>
-         <span  className='text-danger'>OUR</span> PACKAGES
+         <span  className='text-success'>OUR</span> PACKAGES
           </h1>
           </div>
         

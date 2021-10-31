@@ -64,10 +64,11 @@ const Order = () => {
 
  
   return (
-    <div className='order-place'>
+    <div className='container-fluid order-section'>
+      <div className='container py-5'>
      <h1 className='text-center my-5'>PLACE YOUR ORDER</h1>
-      <div className="row mx-auto">
-        <div className="col-sm-12 col-md-6 col-lg-8">
+      <div className="row mx-auto align-items-center">
+        <div className="col-sm-12 col-md-6 col-lg-6">
         <div className="card mb-3" style={{maxWidth: '540px'}}>
             <div className="row g-0">
               <div className="col-md-4">
@@ -85,7 +86,7 @@ const Order = () => {
                       <span className="text-muted">( {packages?.ratingCount} reviews )</span>
                   </div>
                   <p className="card-text">About: {packages?.desc}</p>
-                  <h3>price: {packages?.price}</h3>
+                  <h6>Price: {packages?.price}</h6>
                 </div>
               </div>
             </div>
@@ -97,25 +98,26 @@ const Order = () => {
 
 
 
-      <div className="col-sm-12 col-md-6 col-lg-4">
-        <h1>Add a service</h1>
+      <div className="col-sm-12 col-md-6 col-lg-6 data-form">
+        
         <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
-              <input defaultValue={packages?.name} {...register("package_name")} />     
+              <input className='p-2 m-2 w-50' defaultValue={packages?.name} {...register("package_name")} />     
 
-                <input defaultValue={displayName} {...register("Name")} />
+                <input className='p-2 m-2 w-50' defaultValue={displayName} {...register("Name")} />
 
-                <input defaultValue={email} {...register("email", { required: true })} />
+                <input className='p-2 m-2 w-50' defaultValue={email} {...register("email", { required: true })} />
                 {errors.email && <span className="error">This field is required</span>}
-                <input placeholder="Address" defaultValue="" {...register("address")} />
-                <input placeholder="City" defaultValue="" {...register("city")} />
-                <input placeholder="phone number" defaultValue="" {...register("phone")} />
+                <input className='p-2 m-2 w-50' placeholder="Address" defaultValue="" {...register("address")} />
+                <input className='p-2 m-2 w-50' placeholder="City" defaultValue="" {...register("city")} />
+                <input className='p-2 m-2 w-50' placeholder="phone number" defaultValue="" {...register("phone")} />
 
-                <input type="submit" />
+                <input type="submit" className='fw-bold text-muted p-2 m-2 w-50' />
             </form>
         </div>
       </div>
 
 
+    </div>
     </div>
   );
 };

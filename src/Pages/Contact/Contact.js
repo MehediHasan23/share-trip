@@ -49,23 +49,23 @@ const Contact = () => {
         </div>
         <div className="row mt-5 align-items-center">
           <div className="col-sm-12 col-md-6 col-lg-6">
-          <textarea class=" w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder="Enter Message"></textarea>
+          <textarea className=" w-100" name="message" id="message" cols="30" rows="9" onFocus="this.placeholder = ''" onBlur="this.placeholder = 'Enter Message'" placeholder="Enter Message"></textarea>
           </div>
           <div className="col-sm-12 col-md-6 col-lg-6">
           <div className='mt-5'>
-          <form class="row g-3">
-            <div class="col-md-6">
+          <form className="row g-3">
+            <div className="col-md-6">
               
-              <input type="email" class="form-control" id="inputEmail4" placeholder='email'/>
+              <input type="email" className="form-control" id="inputEmail4" placeholder='email'/>
             </div>
-            <div class="col-md-6">
-              <input type="password" class="form-control" id="inputPassword4" placeholder='Password'/>
+            <div className="col-md-6">
+              <input type="password" className="form-control" id="inputPassword4" placeholder='Password'/>
             </div>
-            <div class="col-12">
-              <input type="text" class="form-control" id="inputAddress" placeholder='Address'/>
+            <div className="col-12">
+              <input type="text" className="form-control" id="inputAddress" placeholder='Address'/>
             </div>
-            <div class="col-12">
-              <button type="submit" class="btn btn-primary">Sign in</button>
+            <div className="col-12">
+              <button type="submit" className="btn btn-primary">Sign in</button>
             </div>
           </form>
           </div>

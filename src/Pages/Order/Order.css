@@ -1,14 +1,4 @@
-.order-place{
-  height: 100vh;
-}
-
-.data-form form{
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-}
-
-.data-form form input , textarea{
-  width: 40% !important;
-  margin-bottom: 10px !important;
+.order-section{
+  background-color: lightskyblue;
+  
 }

@@ -24,35 +24,35 @@ const AddService = () => {
    })
   };
   return (
-    <div className='container'>
-      <div className='data-form'>
-      <h1>Add a service</h1>
+    <div className=' add-container pt-2 pb-3'>
+      <h1 className='text-center my-5 fw-bold text-white'>ADD A SERVICE</h1>
+      <div className='data-form my-5'>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* title */}
       <input
-        {...register("name")} placeholder="TITLE"
-           className="p-2 m-2 w-50 text-center fw-bold"/>
+        {...register("name")} placeholder="add a Title"
+           className="p-2 m-2 w-50 text-center " required/>
       
           {/* price */}
-        <input {...register("price")} placeholder="CHARGE"
-            className="p-2 m-2 w-50 text-center fw-bold" />
+        <input {...register("price")} placeholder="Charge"
+            className="p-2 m-2 w-50 text-center " required/>
           
           {/* Rating */}
-          <input {...register("rating")} placeholder="RATING" className="p-2 m-2 w-50 text-center fw-bold" />
+          <input {...register("rating")} placeholder="Rating" className="p-2 m-2 w-50 text-center " required/>
 
           {/* img  */}
-          <input {...register("img")} placeholder="ENTER A VALID IMAGE URL" className="p-2 m-2 w-50 text-center fw-bold" />
+          <input {...register("img")} placeholder="Enter A Valid Image Url" className="p-2 m-2 w-50 text-center " required/>
       {/* description  */}
-          <input {...register("desc")} placeholder="Write a short note" className="p-2 m-2 w-50 text-center fw-bold" />
+          <input {...register("desc")} placeholder="Write a short note" className="p-2 m-2 w-50 text-center " required/>
       {/* Duration */}
-          <input {...register("time")} placeholder="Duration: 5/7/8 hours" className="p-2 m-2 w-50 text-center fw-bold" />
+          <input {...register("time")} placeholder="Duration: 5/7/8 hours" className="p-2 m-2 w-50 text-center " required/>
       {/* region  */}
-          <input {...register("region")} placeholder="REGION : ASIA/EUROPE" className="p-2 m-2 w-50 text-center fw-bold" />
+          <input {...register("region")} placeholder="Region: Asia/Europe" className="p-2 m-2 w-50 text-center " required/>
       
-          <input {...register("ratingCount")} placeholder="Total Count" className="p-2 m-2 w-50 text-center fw-bold" />
+          <input {...register("ratingCount")} placeholder="Total Count" className="p-2 m-2 w-50 text-center " required/>
  
-      <input type="submit" value='SEND' className='fw-bold text-muted'/>
+      <input type="submit" value='SEND' className='fw-bold text-muted p-2 m-2 w-50'/>
     </form>
     </div>
       
@@ -62,16 +62,3 @@ const AddService = () => {
 
 export default AddService;
 
-/* "name": "Mount Erciyes",
-    "price": "890$",
-    "rating": "4.5",
-    "img": "https://preview.colorlib.com/theme/destino/images/xpopular_1.jpg.pagespeed.ic.u7BF9JOUqg.webp",
-    "desc": "Popular mountain with a ski resort.",
-    "time": "5 hours",
-    "region": "Asia",
-    "ratingCount": "1017" */
-
-
-
-
-//  axios.post('https://fierce-beyond-94481.herokuapp.com/services', data)

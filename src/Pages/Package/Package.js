@@ -9,7 +9,7 @@ import {faStar as fullStar } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 
 const Package = (props) => {
-  const {_id,time, ratingCount, desc, img, name, price, rating,region} = props.service
+  const {_id, ratingCount,  img, name, price, rating,} = props.service
   return (
     <div  className='col-sm-12 col-md-6 col-lg-4'> 
       <div  className="card mx-auto className='mb-0' border m-2" style={{width: "18rem"}}>
@@ -22,8 +22,8 @@ const Package = (props) => {
             initialRating={rating}emptySymbol={<FontAwesomeIcon icon={emptyStar} />}fullSymbol={<FontAwesomeIcon icon={fullStar} />}/>{' '} <span className="text-muted">{rating}</span>
             <span className="text-muted">( {ratingCount} reviews )</span>
          </div>
-        <p >Price: {price} $</p>
-        <Link to={`/order/${_id}`}><Button className='btn btn-primary w-100'>View Details</Button></Link>
+        <p >Price: {price}</p>
+        <Link to={`/order/${_id}`}><Button className='btn btn-primary w-100 fw-bold'>Booking Now</Button></Link>
       </div>
       </div>
     </div>
@@ -34,25 +34,3 @@ export default Package;
 
 
 
-// const {_id,time, ratingCount, desc, img, name, price, rating,region} = props.service
-
-{/* <span className='text-warning'>
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-        <small className='mx-2 text-dark'>{rating}</small>
-        </span> */}
-
-
-                {/* <div className="text-start">
-                            <Rating readonly
-                                style={{ color: '#f97150' }}
-                                initialRating={rating}
-                                emptySymbol={<FontAwesomeIcon icon={emptyStar} />}
-                                fullSymbol={<FontAwesomeIcon icon={fullStar} />}
-                            />{' '}
-                    <span className="text-muted">{rating}</span>
-                            <span className="text-muted">( {ratingCount} reviews )</span>
-
-                            </div> */}

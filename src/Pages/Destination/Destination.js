@@ -15,8 +15,8 @@ const Destination = () => {
     <div className="destination-container">
       <div className="container">
         <div className="text-center mb-5">
-          <h1 className="fw-bold">POPULAR PLACES</h1>
-          <p>
+          <h1 className="fw-bold"><span className='text-success'>POPULAR</span> PLACES</h1>
+          <p className='fw-bold text-success'>
             We all live in an age that belongs to the young at heart. Life that
             is becoming extremely fast, day.
           </p>
