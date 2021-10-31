@@ -11,7 +11,7 @@ const Packages = () => {
 //data loading 
   const [packages, setPackages] = useState([])
   useEffect(()=>{
-    fetch('http://localhost:5000/packages')
+    fetch('https://powerful-dawn-79694.herokuapp.com/packages')
     .then(res => res.json())
     .then(data => setPackages(data))
   },[])

@@ -1,10 +1,10 @@
 import React from 'react';
-import { NavLink , useHistory, useLocation} from 'react-router-dom';
-// import useProvContext from '../../../hooks/useProvContext';
+import { useHistory, useLocation} from 'react-router-dom';
+
 import useProvContext from './../../../Hooks/useProvContext'
 import './Login.css'
 import google from './../../../images/google.png'
-// import github from './../../../images/github.png'
+
 import { Col, Form, FormControl, InputGroup, Row } from 'react-bootstrap';
 
 const Login = () => {
@@ -23,7 +23,7 @@ const Login = () => {
       </p>
       <p className="text-danger text-center">{error}</p>
       
-      {/* <div className="form-container mx-auto">
+       <div className="form-container mx-auto">
       
         <Form
           onSubmit={(e)=>{
@@ -80,10 +80,10 @@ const Login = () => {
           </button>
         </Form>
 
-      </div> */}
+      </div> 
       
 
-      {/* <p className="mt-3">Or</p> */}
+      <p className="mt-3">Or</p>
       
       <div>
         <button

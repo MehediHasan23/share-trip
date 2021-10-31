@@ -17,7 +17,7 @@ const Order = () => {
   const{id} = useParams()
   const [packages, setPackages] = useState({})
   useEffect(()=>{
-    fetch('http://localhost:5000/packages')
+    fetch('https://powerful-dawn-79694.herokuapp.com/packages')
     .then(res=> res.json())
     .then(data=>{
       
@@ -38,7 +38,7 @@ const Order = () => {
   const onSubmit = data => {
     data.status = "pending"
     delete data._id;
-    fetch('http://localhost:5000/orders',{
+    fetch('https://powerful-dawn-79694.herokuapp.com/orders',{
         method:'POST',
         headers:{
             'content-type': 'application/json'

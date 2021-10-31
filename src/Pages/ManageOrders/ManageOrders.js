@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 const ManageOrders = () => {
   const [allOrders, setAllOrders] = useState([])
   useEffect(() => {
-    fetch('http://localhost:5000/orders')
+    fetch('https://powerful-dawn-79694.herokuapp.com/orders')
       .then(res => res.json())
       .then(data => setAllOrders(data))
     
@@ -16,7 +16,7 @@ const ManageOrders = () => {
     
     const proceed = window.confirm("you want to sure to delete");
     if (proceed) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `https://powerful-dawn-79694.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })

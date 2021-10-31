@@ -10,7 +10,7 @@ const MyOrders = () => {
   const [lists, setLists] = useState([]);
   useEffect(() => {
     
-    fetch(`http://localhost:5000/orders/${email}`)
+    fetch(`https://powerful-dawn-79694.herokuapp.com/orders/${email}`)
       .then((res) => res.json())
       .then((data) => setLists(data));
   }, [email]);
@@ -19,7 +19,7 @@ const MyOrders = () => {
   const deleteId = (id) => {
     const proceed = window.confirm("you want to sure to delete");
     if (proceed) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `https://powerful-dawn-79694.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })
