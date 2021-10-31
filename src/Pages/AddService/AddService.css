@@ -1,0 +1,10 @@
+.data-form form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.data-form form input , textarea{
+  width: 40%;
+  margin-bottom: 10px;
+}

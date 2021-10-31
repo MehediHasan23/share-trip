@@ -31,6 +31,8 @@ const Menubar = () => {
               ) : (
               <>
               <Nav.Link as={NavLink} to="/myOrders" className="text-white fw-bold fs-6">MY ORDERS</Nav.Link>
+              <Nav.Link as={NavLink} to="/manageOrders" className="text-white fw-bold fs-6">MANAGE ORDERS</Nav.Link>
+              <Nav.Link as={NavLink} to="/addService" className="text-white fw-bold fs-6">ADD SERVICE</Nav.Link>
                 <NavDropdown
                   title={
                     <img
